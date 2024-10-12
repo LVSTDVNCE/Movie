@@ -8,11 +8,11 @@ interface MovieList {
 
 const MovieList: React.FC<MovieList> = ({ movieList }) => {
 	return (
-		<div>
+		<>
 			{movieList.map(movie => (
 				<MovieListCard movie={movie} />
 			))}
-		</div>
+		</>
 	)
 }
 
