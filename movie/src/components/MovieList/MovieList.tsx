@@ -9,8 +9,8 @@ interface MovieList {
 const MovieList: React.FC<MovieList> = ({ movieList }) => {
 	return (
 		<>
-			{movieList.map(movie => (
-				<MovieListCard movie={movie} />
+			{movieList.map((movie, key) => (
+				<MovieListCard movie={movie} key={key} />
 			))}
 		</>
 	)

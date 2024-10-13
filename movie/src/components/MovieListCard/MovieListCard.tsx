@@ -41,7 +41,9 @@ const MovieListCard: React.FC<MovieListCard> = ({ movie }) => {
 					size='small'
 					sx={{ position: 'absolute', bottom: 20, right: 20 }}
 				>
-					<Link to='/MovieAbout'>Watch</Link>
+					<Link to='/MovieAbout' state={{ from: movie }}>
+						Watch
+					</Link>
 				</Button>
 			</CardActions>
 		</Card>
