@@ -65,7 +65,12 @@ const Main = () => {
 
 	return (
 		<Container
-			sx={{ display: 'flex', flexWrap: 'wrap', gap: '34px', marginTop: '20px' }}
+			sx={{
+				display: 'flex',
+				flexWrap: 'wrap',
+				gap: '34px',
+				marginTop: '20px',
+			}}
 		>
 			<Search value={search} onChange={handleChange} />
 			<MovieList movieList={movieList.slice(0, itemsPerPage)} />
@@ -76,6 +81,7 @@ const Main = () => {
 				page={currentPage}
 				onChange={handlePageChange}
 				color='primary'
+				sx={{ marginBottom: '20px' }}
 			/>
 		</Container>
 	)
