@@ -1,17 +1,34 @@
+import React from 'react'
 import { Box, AppBar, Toolbar, IconButton, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import DrawerHeader from '../DrawerHeader/DrawerHeader'
 
 const Header = () => {
+	const [open, setOpen] = React.useState(false)
+
+	const handleDrawerOpen = () => {
+		setOpen(true)
+	}
+
+	const handleDrawerClose = () => {
+		setOpen(false)
+	}
+
 	return (
-		<Box sx={{ flexGrow: 1 }}>
+		<Box sx={{ position: 'sticky', top: 0, zIndex: 10 }}>
 			<AppBar position='static' sx={{ backgroundColor: '#999' }}>
 				<Toolbar>
 					<IconButton
-						size='large'
-						edge='start'
 						color='inherit'
 						aria-label='open drawer'
-						sx={{ mr: 2 }}
+						onClick={handleDrawerOpen}
+						edge='start'
+						sx={[
+							{
+								mr: 2,
+							},
+							open && { display: 'none' },
+						]}
 					>
 						<MenuIcon />
 					</IconButton>
@@ -25,6 +42,7 @@ const Header = () => {
 					</Typography>
 				</Toolbar>
 			</AppBar>
+			<DrawerHeader open={open} handleDrawerClose={handleDrawerClose} />
 		</Box>
 	)
 }
