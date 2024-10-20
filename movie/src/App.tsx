@@ -4,6 +4,7 @@ import Layout from './components/Layout/Layout'
 import Main from './pages/Main/Main'
 import AllMovies from './pages/AllMovies/AllMovies'
 import MovieAbout from './pages/MovieAbout/MovieAbout'
+import Favorites from './pages/Favorites/Favorites'
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 				<Route index element={<Main />} />
 				<Route path='AllMovies' element={<AllMovies />} />
 				<Route path='MovieAbout' element={<MovieAbout />} />
+				<Route path='Favorites' element={<Favorites />} />
 			</Route>
 		</Routes>
 	)
