@@ -18,8 +18,11 @@ const Footer = () => {
 		<Box
 			sx={{
 				padding: 3,
+				minWidth: '1104px',
 				marginTop: 'auto',
 				backgroundColor: theme => theme.palette.grey[200],
+				position: 'fixed',
+				bottom: 0,
 			}}
 		>
 			<Container maxWidth='sm' sx={{ textAlign: 'center' }}>

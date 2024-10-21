@@ -5,7 +5,7 @@ import { Container } from '@mui/material'
 
 const Layout = () => {
 	return (
-		<Container>
+		<Container sx={{ display: 'flex', flexDirection: 'column' }}>
 			<Header />
 			<Outlet />
 			<Footer />
