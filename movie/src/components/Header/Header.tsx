@@ -15,8 +15,17 @@ const Header = () => {
 	}
 
 	return (
-		<Box sx={{ position: 'sticky', top: 0, zIndex: 10 }}>
-			<AppBar position='static' sx={{ backgroundColor: '#999' }}>
+		<Box
+			sx={{
+				position: 'sticky',
+				top: 0,
+				zIndex: 10,
+			}}
+		>
+			<AppBar
+				position='static'
+				sx={{ backgroundColor: '#999', borderRadius: '0 0 20px 20px' }}
+			>
 				<Toolbar>
 					<IconButton
 						color='inherit'

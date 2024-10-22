@@ -21,8 +21,9 @@ const Footer = () => {
 				minWidth: '1104px',
 				marginTop: 'auto',
 				backgroundColor: theme => theme.palette.grey[200],
-				position: 'fixed',
+				position: 'static',
 				bottom: 0,
+				borderRadius: '20px 20px 0 0',
 			}}
 		>
 			<Container maxWidth='sm' sx={{ textAlign: 'center' }}>
