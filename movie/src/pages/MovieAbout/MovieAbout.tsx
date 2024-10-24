@@ -1,4 +1,3 @@
-import React from 'react'
 import { useLocation } from 'react-router-dom'
 import {
 	Container,
@@ -10,11 +9,31 @@ import {
 	Box,
 } from '@mui/material'
 import Grid from '@mui/material/Grid2'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+	addToFavorites,
+	removeFromFavorites,
+} from './../../redux/favoritesSlice/favoritesSlice'
 
 const MoviePage = () => {
 	const location = useLocation()
 	const { from } = location.state || {}
 	const imageLink = 'https://image.tmdb.org/t/p/w500'
+
+	const dispatch = useDispatch()
+	const favorites = useSelector((state: any) => state.favorites.favorites)
+
+	const isFavorite = favorites.some(
+		(movie: { id: any }) => movie.id === from?.id
+	)
+
+	const handleFavoriteClick = () => {
+		if (isFavorite) {
+			dispatch(removeFromFavorites(from.id))
+		} else {
+			dispatch(addToFavorites(from))
+		}
+	}
 
 	if (!from) {
 		return (
@@ -83,8 +102,14 @@ const MoviePage = () => {
 								>
 									Смотреть трейлер
 								</Button>
-								<Button variant='outlined' color='secondary'>
-									Добавить в избранное
+								<Button
+									variant={isFavorite ? 'contained' : 'outlined'}
+									color={isFavorite ? 'error' : 'secondary'}
+									onClick={handleFavoriteClick}
+								>
+									{isFavorite
+										? 'Удалить из избранного'
+										: 'Добавить в избранное'}
 								</Button>
 							</Box>
 						</CardContent>
